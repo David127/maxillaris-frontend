@@ -1,0 +1,19 @@
+<h1 class="title">Listado Archivos</h1>
+
+<p>Peso total: {{ total.peso_total }}</p>
+<p class="text">Cantidad total: {{ total.cantidad_total }}</p>
+
+<a routerLink="create-file" class="link">Nuevo</a>
+
+
+<section class="files">
+  <article class="file" *ngFor="let file of files">
+    <p>Peso: {{ file.peso }}</p>
+    <p>Tipo: {{ file.tipo }}</p>
+    <p>Cantidad: {{ file.cantidad }}</p>
+    <div class="actions">
+      <a [routerLink]="[file.id]" class="update">Editar</a>
+      <button (click)="deleteFile(file.id)" class="delete">Eliminar</button>
+    </div>
+  </article>
+</section>

@@ -1,0 +1,29 @@
+<div class="container">
+  <h1 class="title">Actualizar Archivo</h1>
+  
+  <a routerLink="/" class="link">Volver</a>
+  <form [formGroup]="form" (ngSubmit)="updateFile($event)" class="form">
+  
+    <div class="field">
+      <label for="">Id</label>
+      <input type="text" formControlName="id">
+    </div>
+
+    <div class="field">
+      <label for="">Peso</label>
+      <input type="number" formControlName="peso">
+    </div>
+
+    <div class="field">
+      <label for="">Tipo</label>
+      <input type="text" formControlName="tipo">
+    </div>
+
+    <div class="field">
+      <label for="">Cantidad</label>
+      <input type="number" formControlName="cantidad">
+    </div>
+  
+    <button type="submit" [disabled]="this.form.invalid">Actualizar</button>
+  </form>
+</div>
